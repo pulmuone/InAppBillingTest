@@ -694,7 +694,7 @@ namespace InAppBillingTest.ViewModels
                                 //expiration_intent : 0, 구독이 만료된 이유
                                 RequestBody req = new RequestBody()
                                 {
-                                    password = "ee7b992cb68846d5ad3efa3b12a66677",
+                                    password = "ee7b**************************",
                                     exclude_old_transactions = true,
                                     receipt_data = recentSub.PurchaseToken ?? string.Empty
                                 };
@@ -910,6 +910,7 @@ namespace InAppBillingTest.ViewModels
         /// iOS 구독 영수증 상태
         /// 구독을 취소하고 환불 받을 경우?
         /// 당월만 구독하는 경우?
+        /// https://developer.apple.com/documentation/appstorereceipts/status
         /// </summary>
         /// <returns></returns>
         private string ReceiptSatusMessage(int status)
@@ -966,6 +967,7 @@ namespace InAppBillingTest.ViewModels
         /// <summary>
         /// The reason a subscription expired.
         /// iOS 구독기간 만료에 대한 이유 
+        /// https://developer.apple.com/documentation/appstorereceipts/expiration_intent
         /// </summary>
         /// <param name="expiration_intent"></param>
         /// <returns></returns>

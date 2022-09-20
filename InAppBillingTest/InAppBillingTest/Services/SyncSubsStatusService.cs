@@ -65,7 +65,7 @@ namespace InAppBillingTest.Services
                                     if (recentSub.State == PurchaseState.Purchased || recentSub.State == PurchaseState.Restored)
                                     {
                                         IVerifyReceiptService service = DependencyService.Get<IVerifyReceiptService>();
-                                        SubscriptionPurchaseV2 receipt = await service.GetReceipt("com.gwise.BarcodeScanner", recentSub.PurchaseToken ?? string.Empty);
+                                        SubscriptionPurchaseV2 receipt = await service.GetReceipt("com.gwise.**************", recentSub.PurchaseToken ?? string.Empty);
                                         if (receipt != null)
                                         {
                                             //안드로이드는 우선 상태가 구독이 되어야 한다. 취소/만료도 구독 상태로 되어 있다.
