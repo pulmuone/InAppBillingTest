@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InAppBillingTest.Views.PaymentPage"
+             xmlns:vm="clr-namespace:InAppBillingTest.ViewModels">
+    
+    <ContentPage.BindingContext>
+        <vm:PaymentViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Buy Subscription" Command="{Binding BuySubscriptionCommand}"/>
+            <Button Text="Restore Subscription" Command="{Binding RestoreSubscriptionCommand}" />
+            <Button Text="Check Subscription" Command="{Binding CheckSubscriptionCommand}"/>
+            <Button Text="Get Product Info" Command="{Binding GetProductInfoCommand}"/>
+            <Label Text="{Binding SubsPrice}"/>
+            <Label Text="{Binding SubscriptionDays}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
